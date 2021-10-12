@@ -1,6 +1,7 @@
 package models
 
 type Account struct {
-	AccoutSeq   int    `json:"accountSeq"`
-	AccountName string `json:"accountName"`
+	UserId      int     `json:"userId"`
+	AccountType string  `json:"accountType"`
+	Interest    float64 `json:"interest"`
 }
