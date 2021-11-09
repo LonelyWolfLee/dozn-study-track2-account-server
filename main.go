@@ -23,8 +23,8 @@ func main() {
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
-	app.Get("/all", handlers.GetAccountListHandler)
-	app.Post("/create", handlers.PostAccountCreateHandler)
+	app.Post("/api/account/list", handlers.GetAccountListHandler)
+	app.Post("/api/account/create", handlers.PostAccountCreateHandler)
 
 	app.Listen(":" + config.Port)
 }
