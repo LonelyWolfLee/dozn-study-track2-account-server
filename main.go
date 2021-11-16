@@ -23,8 +23,8 @@ func main() {
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
-	app.Post("/api/account/list", handlers.GetAccountListHandler)
-	app.Post("/api/account/create", handlers.PostAccountCreateHandler)
+	app.Post("/list", handlers.GetAccountListHandler)
+	app.Post("/create", handlers.PostAccountCreateHandler)
 
 	app.Listen(":" + config.Port)
 }
@@ -37,6 +37,7 @@ func LoadConfigration(env string) models.Config {
 		fmt.Println(err.Error())
 	}
 	jsonParser := json.NewDecoder(file)
+
 	jsonParser.Decode(&config)
 	return config
 }
